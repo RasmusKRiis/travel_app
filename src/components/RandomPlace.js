@@ -21,6 +21,9 @@ export default function RandomPlace({
         <strong>Comment:</strong> {place.comment}
       </div>
       <div className={styles.detail}>
+        <strong>Location:</strong> {place.location}
+      </div>
+      <div className={styles.detail}>
         <strong>Distance:</strong> {distance.toFixed(2)} km
       </div>
       <div className={styles.actions}>

@@ -9,6 +9,7 @@ export default function FilterForm({ onSubmit }) {
     sightseeing: true,
   });
   const [maxDist, setMaxDist] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleCheckbox = e => {
     const { name, checked } = e.target;
@@ -17,15 +18,24 @@ export default function FilterForm({ onSubmit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({ types, maxDist: maxDist ? parseFloat(maxDist) : null });
+    onSubmit({
+      types,
+      maxDist: maxDist ? parseFloat(maxDist) : null,
+      location,
+    });
   };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <label>Choose location:</label>
-      <select disabled>
-        <option>Hong Kong</option>
-      </select>
+      <label>
+        Location:
+        <input
+          type="text"
+          value={location}
+          onChange={e => setLocation(e.target.value)}
+          placeholder="e.g. Hong Kong"
+        />
+      </label>
       <div className={styles.checkboxGroup}>
         {["eating", "shopping", "sightseeing"].map(t => (
           <label key={t}>

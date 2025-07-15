@@ -32,8 +32,13 @@ function App() {
     );
   }, []);
 
-  const applyFilters = ({ types, maxDist }) => {
+  const applyFilters = ({ types, maxDist, location }) => {
     let arr = places.filter(p => types[p.type]);
+    if (location) {
+      arr = arr.filter(p =>
+        p.location.toLowerCase().includes(location.toLowerCase())
+      );
+    }
     if (userLoc && maxDist != null) {
       arr = arr.filter(p => {
         const dist = haversine(userLoc, [
@@ -64,6 +69,15 @@ function App() {
   const handleModify = () => {
     setSelected(null);
   };
+
+  if (!places.length) {
+    return (
+      <div className={styles.container}>
+        <h1>Travel Randomizer (簡單 gaan2daan1)</h1>
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>

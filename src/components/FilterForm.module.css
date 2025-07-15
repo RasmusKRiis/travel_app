@@ -6,14 +6,23 @@
   background: #fafafa;
   padding: 1rem;
   border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .checkboxGroup {
   display: flex;
   gap: 1rem;
 }
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .button {
   padding: 0.5rem 1rem;
-  background: #4caf50;
+  background: #ff5722;
   border: none;
   color: white;
   border-radius: 4px;

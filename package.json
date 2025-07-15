@@ -2,7 +2,7 @@
   "name": "travel-randomizer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<your-github-username>.github.io/travel-randomizer",
+  "homepage": "https://RasmusKRiis.github.io/travel_app",
   "dependencies": {
     "papaparse": "^5.3.2",
     "react": "^17.0.2",
